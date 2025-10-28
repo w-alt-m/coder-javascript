@@ -29,7 +29,7 @@ switch (accionPokedex) {
         alert(`El pokémon ${pokemonEncontrado.nombre} ha sido curado 60 PdV`)
         break;
     case "2":
-        alert(`El pokémon ${pokemonEncontrado.nombre} ha sido soltado`)
+        alert(`El pokémon ${pokemonEncontrado.nombre} ha sido soltado en la naturaleza`)
         const nuevaLista = pokemones.filter(pokemon => pokemon !== pokemonEncontrado)
         alert("Pokemones disponibles: \n" + nuevaLista.map(pokemon => pokemon.nombre).join('\n'))
         break;

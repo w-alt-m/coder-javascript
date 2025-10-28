@@ -1,1 +1,1 @@
-
+Simulador de pokédex simple.

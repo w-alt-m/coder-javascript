@@ -4,18 +4,21 @@ const pokemones = [
     { nombre: "squirtle", tipo: "agua", nivel: 11 }
 ];
 
+alert("Bienvenido a la pokédex. Pokemones disponibles: \n pikachu \n charmander \n squirtle")
+
 function buscarPokemon(nombreBuscado) {
     for (let pokemon of pokemones) {
-        if (pokemon.nombre === nombreBuscado) {
+        if (pokemon.nombre.includes(nombreBuscado)) {
             return pokemon
         }
     }
 }
 
-let nombreBuscado = prompt("ingrese el nombre del pokemon que desea buscar")
+let nombreBuscado = prompt("Ingrese el nombre del pokemon que desea buscar")
 
 let pokemonEncontrado = buscarPokemon(nombreBuscado)
 
-alert(`Pokemon: ${pokemonEncontrado.nombre}, Tipo: ${pokemonEncontrado.tipo}, Nivel: ${pokemonEncontrado.nivel}`)
+alert(`Pokemon: ${pokemonEncontrado.nombre} \nTipo: ${pokemonEncontrado.tipo} \nNivel: ${pokemonEncontrado.nivel}`)
 
-prompt(`¿Qué acción desea realizar? \n 1. Curar pokémon \n  \n 2. Soltar pokémon`)
+let accionPokedex = prompt(`¿Qué acción desea realizar? Ingrese el número de la acción: \n 1. Curar pokémon \n  \n 2. Soltar pokémon`)
+

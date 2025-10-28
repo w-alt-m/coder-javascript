@@ -24,3 +24,16 @@ alert(`Pokemon: ${pokemonEncontrado.nombre} \nTipo: ${pokemonEncontrado.tipo} \n
 
 let accionPokedex = prompt(`¿Qué acción desea realizar? Ingrese el número de la acción: \n 1. Curar pokémon \n 2. Soltar pokémon`)
 
+switch (accionPokedex) {
+    case "1":
+        alert(`El pokémon ${pokemonEncontrado.nombre} ha sido curado 60 PdV`)
+        break;
+    case "2":
+        alert(`El pokémon ${pokemonEncontrado.nombre} ha sido soltado`)
+        const nuevaLista = pokemones.filter(pokemon => pokemon !== pokemonEncontrado)
+        alert("Pokemones disponibles: \n" + nuevaLista.map(pokemon => pokemon.nombre).join('\n'))
+        break;
+    default:
+        alert("Acción no reconocida")
+        break;
+}

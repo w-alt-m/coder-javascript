@@ -4,9 +4,24 @@ const taskInput = document.getElementById("taskInput");
 const saveTaskBtn = document.getElementById("saveTaskBtn");
 const taskList = document.getElementById("taskList");
 
-let tasks = [];
+let tasks = ["hola", "123", "probando"];
 
+/* Mostrar formulario */
 btnAdd.addEventListener("click", () => {
     formSection.classList.toggle("d-none");
     taskInput.focus();
 });
+
+function renderTasks() {
+    taskList.innerHTML = "";
+    for (const task of tasks) {
+        const li = document.createElement("li");
+        li.classList.add("list-group-item");
+        li.innerHTML = `
+        ${task}
+        `
+        taskList.appendChild(li)
+    }
+}
+
+renderTasks();

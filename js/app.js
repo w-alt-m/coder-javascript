@@ -4,7 +4,10 @@ const taskInput = document.getElementById("taskInput");
 const saveTaskBtn = document.getElementById("saveTaskBtn");
 const taskList = document.getElementById("taskList");
 
-let tasks = ["hola", "123", "probando"];
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+if (tasks.length > 0) {
+    renderTasks()
+}
 
 /* Mostrar formulario */
 btnAdd.addEventListener("click", () => {
@@ -12,6 +15,7 @@ btnAdd.addEventListener("click", () => {
     taskInput.focus();
 });
 
+/* Mostrar tareas */
 function renderTasks() {
     taskList.innerHTML = "";
     for (const task of tasks) {
@@ -26,3 +30,20 @@ function renderTasks() {
 }
 
 renderTasks();
+
+/* Agregar tarea */
+
+formSection.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const note = taskInput.value.trim();
+
+    if (note !== "") {
+        tasks.push(note)
+        taskInput.value = "";
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        renderTasks();
+    }
+})
+
+/* Eliminar tarea */

@@ -40,15 +40,17 @@
 
         <div class="card-body">
           <!-- Formulario oculto -->
-          <div id="formSection" class="input-group mb-3 d-none">
+          <form id="formSection" class="input-group mb-3 d-none">
             <input
               type="text"
               id="taskInput"
               class="form-control"
               placeholder="Nueva tarea..."
             />
-            <button id="saveTaskBtn" class="btn btn-success">Agregar</button>
-          </div>
+            <button type="submit" id="saveTaskBtn" class="btn btn-success">
+              Agregar
+            </button>
+          </form>
 
           <!-- Lista -->
           <ul id="taskList" class="list-group"></ul>

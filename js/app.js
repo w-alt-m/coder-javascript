@@ -1,8 +1,10 @@
+/* Importar elementos HTML */
 const btnAdd = document.getElementById("btnAdd");
 const formSection = document.getElementById("formSection");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
 
+/* Botón de agregar tarea */
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 if (tasks.length > 0) {
     renderTasks()
@@ -27,11 +29,9 @@ function renderTasks() {
         taskList.appendChild(li)
     }
 }
-
 renderTasks();
 
 /* Agregar tarea */
-
 formSection.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -46,7 +46,6 @@ formSection.addEventListener("submit", (e) => {
 })
 
 /* Eliminar tarea */
-
 taskList.addEventListener("click", (e) => {
     if (e.target.classList.contains("btn-delete")) {
         const id = e.target.classList[0]

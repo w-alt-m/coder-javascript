@@ -3,17 +3,24 @@ body {
 }
 
 .card-balance {
+    width: 400px;
     max-width: 400px;
     border-radius: 12px;
     overflow: hidden;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-balance {
     padding: 1rem 1.25rem;
+    flex-shrink: 0;
 }
 
 .body-balance {
     padding: 1.5rem 1.25rem;
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 .add-btn-balance {
@@ -33,4 +40,12 @@ body {
     padding: 0.75rem 0;
     border-left: none;
     border-right: none;
+}
+
+#taskList {
+    min-height: 120px;
+}
+
+#formSection {
+    min-height: 48px;
 }

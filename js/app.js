@@ -18,7 +18,8 @@ function renderTasks() {
         const li = document.createElement("li");
         li.classList.add("list-group-item");
         li.innerHTML = `
-        ${task}
+            <span>${task}</span>
+            <button class="btn btn-sm btn-danger">Eliminar</button>
         `
         taskList.appendChild(li)
     }

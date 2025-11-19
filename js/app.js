@@ -1,7 +1,6 @@
 const btnAdd = document.getElementById("btnAdd");
 const formSection = document.getElementById("formSection");
 const taskInput = document.getElementById("taskInput");
-const saveTaskBtn = document.getElementById("saveTaskBtn");
 const taskList = document.getElementById("taskList");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -23,7 +22,7 @@ function renderTasks() {
         li.classList.add("list-group-item");
         li.innerHTML = `
             <span>${task.text}</span>
-            <button class="btn btn-sm btn-danger" data-id="${task.id}">Eliminar</button>
+            <button class="btn btn-sm btn-danger id-${task.id} btn-delete">Eliminar</button>
         `
         taskList.appendChild(li)
     }
@@ -47,3 +46,10 @@ formSection.addEventListener("submit", (e) => {
 })
 
 /* Eliminar tarea */
+
+
+taskList.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btn-delete")) {
+        console.log(e.target);
+    };
+})

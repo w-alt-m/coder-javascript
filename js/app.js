@@ -22,7 +22,7 @@ function renderTasks() {
         li.classList.add("list-group-item");
         li.innerHTML = `
             <span>${task.text}</span>
-            <button class="btn btn-sm btn-danger id-${task.id} btn-delete">Eliminar</button>
+            <button class="${task.id} btn-delete btn btn-sm btn-danger">Eliminar</button>
         `
         taskList.appendChild(li)
     }
@@ -47,9 +47,13 @@ formSection.addEventListener("submit", (e) => {
 
 /* Eliminar tarea */
 
-
 taskList.addEventListener("click", (e) => {
     if (e.target.classList.contains("btn-delete")) {
-        console.log(e.target);
+        const id = e.target.classList[0]
+        tasks = tasks.filter(task => task.id != id);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        renderTasks();
     };
+
 })
+

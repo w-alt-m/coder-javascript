@@ -22,8 +22,8 @@ function renderTasks() {
         const li = document.createElement("li");
         li.classList.add("list-group-item");
         li.innerHTML = `
-            <span>${task}</span>
-            <button class="btn btn-sm btn-danger">Eliminar</button>
+            <span>${task.text}</span>
+            <button class="btn btn-sm btn-danger" data-id="${task.id}">Eliminar</button>
         `
         taskList.appendChild(li)
     }
@@ -39,7 +39,7 @@ formSection.addEventListener("submit", (e) => {
     const note = taskInput.value.trim();
 
     if (note !== "") {
-        tasks.push(note)
+        tasks.push({ id: Date.now(), text: note })
         taskInput.value = "";
         localStorage.setItem("tasks", JSON.stringify(tasks));
         renderTasks();

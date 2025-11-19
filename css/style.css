@@ -1,0 +1,15 @@
+body {
+    background: #f0f2f5;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}

@@ -4,12 +4,42 @@ const formSection = document.getElementById("formSection");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
 
+/* Swal Toast */
+function toastMessage(message, bgColor = 'cornflowerblue') {
+    Swal.fire({
+        toast: true,
+        title: `${message}`,
+        position: 'top-end',
+        width: 240,
+        timer: 3000,
+        showConfirmButton: false,
+        background: bgColor,
+        color: 'whitesmoke',
+        showClass: {
+            popup: `
+      animate__animated
+      animate__fadeInDown
+      animate__faster
+    `,
+        },
+        hideClass: {
+            popup: `
+      animate__animated
+      animate__fadeOutUp
+      animate__faster
+    `,
+        },
+    })
+}
+
 /* Botón de agregar tarea */
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+/* Cargar tareas */
 if (tasks.length > 0) {
     renderTasks()
 } else {
-    // Cargar tareas por defecto
+    /* Cargar tareas por defecto */
     async function getData() {
         const response = await fetch("assets/data/defaultTasks.json");
         const data = await response.json();
@@ -57,6 +87,7 @@ formSection.addEventListener("submit", (e) => {
         taskInput.value = "";
         localStorage.setItem("tasks", JSON.stringify(tasks));
         renderTasks();
+        toastMessage("Nota agregada");
     }
 })
 
@@ -67,7 +98,7 @@ taskList.addEventListener("click", (e) => {
         tasks = tasks.filter(task => task.id != id);
         localStorage.setItem("tasks", JSON.stringify(tasks));
         renderTasks();
+        toastMessage("Nota eliminada", 'crimson');
     };
-
 })
 

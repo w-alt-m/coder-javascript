@@ -69,6 +69,14 @@ function renderTasks() {
         li.classList.add("list-group-item");
         li.innerHTML = `
             <span>${task.text}</span>
+            <label>
+            <select class="${task.id} form-select form-select-sm">
+            <option value="1" selected>Pendiente</option>
+            <option value="2">En progreso</option>
+            <option value="3">Completada</option>
+            </select>
+            </label>
+            <button class="${task.id} btn btn-sm btn-secondary">Editar</button>
             <button class="${task.id} btn-delete btn btn-sm btn-danger">Eliminar</button>
         `
         taskList.appendChild(li)

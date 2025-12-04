@@ -1,1 +1,1 @@
-## Entrega Final: To-do list app con local storage con librerías y fetch
+## Entrega Final: To-do list app con local storage, librerías y fetch

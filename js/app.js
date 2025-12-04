@@ -14,8 +14,7 @@ function toastMessage(message, bgColor = 'cornflowerblue') {
         timer: 3000,
         showConfirmButton: false,
         background: bgColor,
-        color: 'whitesmoke',
-        showClass: {
+        color: 'whitesmoke', showClass: {
             popup: `
       animate__animated
       animate__fadeInDown
@@ -74,7 +73,7 @@ function renderTasks() {
                 <option value="2">En progreso</option>
                 <option value="3">Completada</option>
             </select>
-            <button class="${task.id} btn btn-sm btn-secondary">Editar</button>
+            <button class="${task.id} btn-edit btn btn-sm btn-secondary">Editar</button>
             <button class="${task.id} btn-delete btn btn-sm btn-danger">Eliminar</button>
         `
         taskList.appendChild(li)
@@ -109,3 +108,24 @@ taskList.addEventListener("click", (e) => {
 })
 
 /* Editar tarea */
+
+taskList.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btn-edit")) {
+        const id = e.target.classList[0]
+        const task = tasks.find(task => task.id == id);
+        Swal.fire({
+            title: 'Editar tarea',
+            input: 'text',
+            inputValue: task.text,
+            showCancelButton: true,
+            confirmButtonText: 'Guardar',
+            showLoaderOnConfirm: true,
+            preConfirm: (text) => {
+                task.text = text;
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+                renderTasks();
+                toastMessage("Nota editada", 'green');
+            }
+        })
+    };
+})

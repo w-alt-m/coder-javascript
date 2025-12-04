@@ -1,0 +1,16 @@
+{
+  "defaultTasks": [
+    {
+      "id": 1,
+      "text": "Buscar un video de gatitos que bailen"
+    },
+    {
+      "id": 2,
+      "text": "Intentar preparar la receta más fácil que encuentre en Internet"
+    },
+    {
+      "id": 3,
+      "text": "Llamar a un amigo y hablar en acentos graciosos por un minuto"
+    }
+  ]
+}

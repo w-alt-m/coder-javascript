@@ -8,6 +8,21 @@ const taskList = document.getElementById("taskList");
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 if (tasks.length > 0) {
     renderTasks()
+} else {
+    // Cargar tareas por defecto
+    async function getData() {
+        const response = await fetch("assets/data/defaultTasks.json");
+        const data = await response.json();
+        for (const task of data.defaultTasks) {
+            const li = document.createElement("li");
+            li.classList.add("list-group-item", "example-task");
+            li.innerHTML = `
+            <span>${task.text}</span>
+        `
+            taskList.appendChild(li)
+        }
+    }
+    getData()
 }
 
 /* Mostrar formulario */

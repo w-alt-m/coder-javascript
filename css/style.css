@@ -42,6 +42,11 @@ body {
     border-right: none;
 }
 
+.example-task {
+    color: #00000077;
+    font-style: italic;
+}
+
 #taskList {
     min-height: 120px;
 }

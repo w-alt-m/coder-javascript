@@ -114,7 +114,6 @@ taskList.addEventListener("click", (e) => {
 })
 
 /* Editar tarea */
-
 taskList.addEventListener("click", (e) => {
     if (e.target.classList.contains("btn-edit")) {
         const id = e.target.classList[0]

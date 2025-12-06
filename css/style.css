@@ -202,7 +202,9 @@ body {
 }
 
 .example-task {
-    opacity: 0.7;
+    opacity: 0.6;
+    font-style: italic;
+    color: var(--text-secondary);
     border-style: dashed;
     box-shadow: none;
 }
@@ -240,4 +242,54 @@ body {
     gap: 0.5rem;
     width: 100%;
     justify-content: center;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .card-balance {
+        width: 100%;
+        max-width: 95vw;
+        height: 85vh;
+        border-radius: 20px;
+    }
+
+    .header-balance {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .body-balance {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-balance {
+        height: 90vh;
+        border-radius: 16px;
+    }
+
+    .header-balance h4 {
+        font-size: 1.25rem;
+    }
+
+    .add-btn-balance {
+        width: 40px;
+        height: 40px;
+    }
+
+    .list-group-item {
+        padding: 0.85rem 1rem;
+        gap: 10px;
+    }
+
+    .actions-container {
+        gap: 5px;
+    }
+
+    .form-select-sm {
+        padding-left: 0.5rem;
+        padding-right: 2rem;
+        /* Ensure arrow space */
+        font-size: 0.8rem;
+    }
 }

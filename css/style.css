@@ -16,6 +16,15 @@
     --shadow-hover: 0 15px 50px rgba(0, 0, 0, 0.1);
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Prevent internal page scrolling */
+}
+
 body {
     background: var(--bg-color);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -80,6 +89,10 @@ body {
 .body-balance {
     padding: 2rem;
     background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+    overflow-y: auto;
+    /* Enable internal scrolling */
+    flex: 1;
+    /* Fill remaining space in card */
 }
 
 /* Input Form */
@@ -262,8 +275,14 @@ body {
 
 @media (max-width: 480px) {
     .card-balance {
-        height: 90vh;
-        border-radius: 16px;
+        height: 100dvh;
+        /* Full viewport height */
+        max-height: 100dvh;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        /* Full screen, no corners */
+        border: none;
     }
 
     .header-balance h4 {
@@ -284,13 +303,16 @@ body {
 
     .list-group-item span {
         width: 100%;
-        margin-bottom: 4px; /* Slight separation from buttons */
-        word-break: break-word; /* Prevent overflow of long words */
+        margin-bottom: 4px;
+        /* Slight separation from buttons */
+        word-break: break-word;
+        /* Prevent overflow of long words */
     }
 
     .actions-container {
         width: 100%;
-        justify-content: flex-end; /* Align buttons to the right, or 'space-between' to spread */
+        justify-content: flex-end;
+        /* Align buttons to the right, or 'space-between' to spread */
         gap: 8px;
     }
 

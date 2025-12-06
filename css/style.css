@@ -324,12 +324,18 @@ body {
     }
 
     /* Force SweetAlert to top on mobile */
+    /* Force SweetAlert to top on mobile */
     div:where(.swal2-container) {
         align-items: flex-start !important;
-        padding-top: 2rem !important;
+        padding-top: 1rem !important;
+        /* Small gap from top */
     }
 
     .swal-custom-popup {
         width: 95% !important;
+        margin: 0 auto !important;
+        /* Force no vertical margin, center horizontally */
+        align-self: flex-start !important;
+        /* Double down on alignment */
     }
 }

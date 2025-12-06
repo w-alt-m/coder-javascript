@@ -322,4 +322,14 @@ body {
         /* Ensure arrow space */
         font-size: 0.8rem;
     }
+
+    /* Force SweetAlert to top on mobile */
+    div:where(.swal2-container) {
+        align-items: flex-start !important;
+        padding-top: 2rem !important;
+    }
+
+    .swal-custom-popup {
+        width: 95% !important;
+    }
 }

@@ -65,17 +65,23 @@ function renderTasks() {
     taskList.innerHTML = "";
     for (const task of tasks) {
         const li = document.createElement("li");
-        li.classList.add("list-group-item");
+        li.classList.add("list-group-item", "animate__animated", "animate__fadeInUp", "animate__faster");
         li.innerHTML = `
-            <span>${task.text}</span>
-            <select class="${task.id} form-select form-select-sm">
-                <option value="1" selected>Pendiente</option>
-                <option value="2">En progreso</option>
-                <option value="3">Completada</option>
-            </select>
-            <button class="${task.id} btn-edit btn btn-sm btn-secondary">Editar</button>
-            <button class="${task.id} btn-delete btn btn-sm btn-danger">Eliminar</button>
-        `
+                <span>${task.text}</span>
+                <div class="actions-container">
+                    <select class="${task.id} form-select form-select-sm" style="width: auto;">
+                        <option value="1" selected>Pendiente</option>
+                        <option value="2">En progreso</option>
+                        <option value="3">Completada</option>
+                    </select>
+                    <button class="${task.id} btn-edit btn btn-sm">
+                        <i class="bi bi-pencil-square pe-none"></i>
+                    </button>
+                    <button class="${task.id} btn-delete btn btn-sm">
+                        <i class="bi bi-trash pe-none"></i>
+                    </button>
+                </div>
+            `
         taskList.appendChild(li)
     }
 }
@@ -119,12 +125,21 @@ taskList.addEventListener("click", (e) => {
             inputValue: task.text,
             showCancelButton: true,
             confirmButtonText: 'Guardar',
+            cancelButtonText: 'Cancelar',
             showLoaderOnConfirm: true,
+            buttonsStyling: false,
+            customClass: {
+                popup: 'swal-custom-popup',
+                title: 'swal-custom-title',
+                input: 'swal-custom-input',
+                confirmButton: 'btn btn-primary rounded-pill px-4 mx-2',
+                cancelButton: 'btn btn-outline-secondary rounded-pill px-4 mx-2'
+            },
             preConfirm: (text) => {
                 task.text = text;
                 localStorage.setItem("tasks", JSON.stringify(tasks));
                 renderTasks();
-                toastMessage("Nota editada", 'green');
+                toastMessage("Nota editada", '#007AFF');
             }
         })
     };

@@ -273,7 +273,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .card-balance {
         height: 100dvh;
         /* Full viewport height */

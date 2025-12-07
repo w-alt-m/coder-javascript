@@ -218,8 +218,8 @@ body {
 }
 
 .btn-delete {
-    background: rgba(255, 59, 48, 0.1);
-    color: var(--danger-color);
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-primary);
 }
 
 .btn-delete:hover {

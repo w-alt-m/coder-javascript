@@ -69,10 +69,10 @@ function renderTasks() {
         li.innerHTML = `
                 <span>${task.text}</span>
                 <div class="actions-container">
-                    <select class="${task.id} form-select form-select-sm" style="width: auto;">
-                        <option value="1" selected>Pendiente</option>
-                        <option value="2">En progreso</option>
-                        <option value="3">Completada</option>
+                    <select class="${task.id} options-dropdown form-select form-select-sm" style="width: auto;">
+                        <option value="1" ${task.status == 1 ? 'selected' : ''}>Pendiente</option>
+                        <option value="2" ${task.status == 2 ? 'selected' : ''}>En progreso</option>
+                        <option value="3" ${task.status == 3 ? 'selected' : ''}>Completada</option>
                     </select>
                     <button class="${task.id} btn-edit btn btn-sm">
                         <i class="bi bi-pencil-square pe-none"></i>
@@ -84,6 +84,7 @@ function renderTasks() {
             `
         taskList.appendChild(li)
     }
+
 }
 renderTasks();
 
@@ -143,3 +144,15 @@ taskList.addEventListener("click", (e) => {
         })
     };
 })
+
+/* Editar estado */
+taskList.addEventListener("change", (e) => {
+    if (e.target.classList.contains("options-dropdown")) {
+        const id = e.target.classList[0];
+        const task = tasks.find(task => task.id == id);
+        const selectedOption = e.target.value;
+        task.status = selectedOption;
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        renderTasks()
+    }
+}); 

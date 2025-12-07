@@ -357,12 +357,14 @@ body {
 
     div:where(.swal2-container) {
         align-items: flex-start !important;
-        padding-top: 1rem !important;
+        padding-top: 0rem !important;
     }
 
     .swal-custom-popup {
         width: 95% !important;
         margin: 0 auto !important;
         align-self: flex-start !important;
+        padding: 1.25rem !important;
+        /* Reduced from 2rem to make it less chubby */
     }
 }

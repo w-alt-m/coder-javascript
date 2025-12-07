@@ -56,7 +56,7 @@ if (tasks.length > 0) {
 
 /* Mostrar formulario */
 btnAdd.addEventListener("click", () => {
-    formSection.classList.toggle("d-none");
+    formSection.classList.toggle("show");
     taskInput.focus();
 });
 

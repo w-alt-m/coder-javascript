@@ -128,6 +128,8 @@ taskList.addEventListener("click", (e) => {
             cancelButtonText: 'Cancelar',
             showLoaderOnConfirm: true,
             buttonsStyling: false,
+            heightAuto: false,
+            scrollbarPadding: false,
             customClass: {
                 popup: 'swal-custom-popup',
                 title: 'swal-custom-title',

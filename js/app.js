@@ -65,7 +65,7 @@ function renderTasks() {
     taskList.innerHTML = "";
     for (const task of tasks) {
         const li = document.createElement("li");
-        li.classList.add("list-group-item", "animate__animated", "animate__fadeInUp", "animate__faster");
+        li.classList.add("list-group-item", "animate__animated", "animate__fadeIn", "animate__faster");
         li.innerHTML = `
                 <span>${task.text}</span>
                 <div class="actions-container">

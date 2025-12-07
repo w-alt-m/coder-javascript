@@ -328,10 +328,7 @@ body {
         font-size: 1.25rem;
     }
 
-    .add-btn-balance {
-        width: 40px;
-        height: 40px;
-    }
+
 
     .list-group-item {
         flex-direction: column;

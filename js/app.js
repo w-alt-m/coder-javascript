@@ -69,7 +69,7 @@ function renderTasks() {
         li.innerHTML = `
                 <span>${task.text}</span>
                 <div class="actions-container">
-                    <select class="${task.id} options-dropdown form-select form-select-sm" style="width: auto;">
+                    <select class="${task.id} options-dropdown form-select form-select-sm status-${task.status}" style="width: auto;">
                         <option value="1" ${task.status == 1 ? 'selected' : ''}>Pendiente</option>
                         <option value="2" ${task.status == 2 ? 'selected' : ''}>En progreso</option>
                         <option value="3" ${task.status == 3 ? 'selected' : ''}>Completada</option>

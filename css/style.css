@@ -1,17 +1,14 @@
 :root {
     --primary-color: #007AFF;
-    /* Apple Blue */
     --danger-color: #FF3B30;
-    /* Apple Red */
+    --success-color: #34C759;
     --bg-color: #F5F5F7;
-    /* Apple Light Gray Background */
     --card-bg: #FFFFFF;
     --text-primary: #1D1D1F;
     --text-secondary: #86868B;
     --border-radius-lg: 24px;
     --border-radius-sm: 12px;
     --border-radius-btn: 8px;
-    /* Standard button radius */
     --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.06);
     --shadow-hover: 0 15px 50px rgba(0, 0, 0, 0.1);
 }
@@ -22,7 +19,6 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* Prevent internal page scrolling */
 }
 
 body {
@@ -39,7 +35,6 @@ body {
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    /* Subtle rim */
     height: 700px;
     display: flex;
     flex-direction: column;
@@ -47,7 +42,6 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Header */
 .header-balance {
     padding: 1.5rem 2rem;
     background: rgba(255, 255, 255, 0.8);
@@ -63,7 +57,6 @@ body {
     letter-spacing: -0.02em;
 }
 
-/* Add Button in Header */
 .add-btn-balance {
     width: 44px;
     height: 44px;
@@ -85,17 +78,13 @@ body {
     color: white;
 }
 
-/* Body */
 .body-balance {
     padding: 2rem;
     background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
     overflow-y: auto;
-    /* Enable internal scrolling */
     flex: 1;
-    /* Fill remaining space in card */
 }
 
-/* Input Form */
 #formSection {
     background: var(--card-bg);
     padding: 0.5rem;
@@ -130,7 +119,6 @@ body {
     color: var(--primary-color);
 }
 
-/* List Items */
 .list-group-item {
     display: flex;
     justify-content: space-between;
@@ -140,7 +128,6 @@ body {
     background: var(--card-bg);
     border: 1px solid rgba(0, 0, 0, 0.03);
     border-radius: var(--border-radius-sm) !important;
-    /* Force rounded */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
     transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
     gap: 15px;
@@ -158,7 +145,6 @@ body {
     color: var(--text-primary);
 }
 
-/* Actions */
 .actions-container {
     display: flex;
     align-items: center;
@@ -173,6 +159,7 @@ body {
     padding-top: 0.35rem;
     padding-bottom: 0.35rem;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .form-select-sm:focus {
@@ -180,7 +167,6 @@ body {
     box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
 }
 
-/* Action Buttons */
 .btn-sm {
     width: 32px;
     height: 32px;
@@ -220,7 +206,27 @@ body {
     box-shadow: none;
 }
 
-/* SweetAlert Custom Styles */
+.status-1 {
+    background-color: #F2F2F7;
+    color: #8E8E93;
+    border-color: transparent;
+    font-weight: 600;
+}
+
+.status-2 {
+    background-color: #EBF5FF;
+    color: var(--primary-color);
+    border-color: transparent;
+    font-weight: 600;
+}
+
+.status-3 {
+    background-color: #F0FDF4;
+    color: var(--success-color);
+    border-color: transparent;
+    font-weight: 600;
+}
+
 .swal-custom-popup {
     border-radius: var(--border-radius-lg) !important;
     font-family: 'Inter', sans-serif !important;
@@ -255,7 +261,6 @@ body {
     justify-content: center;
 }
 
-/* Responsiveness */
 @media (max-width: 768px) {
     .card-balance {
         width: 100%;
@@ -276,12 +281,10 @@ body {
 @media (max-width: 576px) {
     .card-balance {
         height: 100dvh;
-        /* Full viewport height */
         max-height: 100dvh;
         width: 100%;
         max-width: 100%;
         border-radius: 0;
-        /* Full screen, no corners */
         border: none;
     }
 
@@ -304,38 +307,29 @@ body {
     .list-group-item span {
         width: 100%;
         margin-bottom: 4px;
-        /* Slight separation from buttons */
         word-break: break-word;
-        /* Prevent overflow of long words */
     }
 
     .actions-container {
         width: 100%;
         justify-content: flex-end;
-        /* Align buttons to the right, or 'space-between' to spread */
         gap: 8px;
     }
 
     .form-select-sm {
         padding-left: 0.5rem;
         padding-right: 2rem;
-        /* Ensure arrow space */
         font-size: 0.8rem;
     }
 
-    /* Force SweetAlert to top on mobile */
-    /* Force SweetAlert to top on mobile */
     div:where(.swal2-container) {
         align-items: flex-start !important;
         padding-top: 1rem !important;
-        /* Small gap from top */
     }
 
     .swal-custom-popup {
         width: 95% !important;
         margin: 0 auto !important;
-        /* Force no vertical margin, center horizontally */
         align-self: flex-start !important;
-        /* Double down on alignment */
     }
 }

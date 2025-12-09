@@ -3,6 +3,7 @@ const btnAdd = document.getElementById("btnAdd");
 const formSection = document.getElementById("formSection");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
+const taskSearch = document.getElementById("taskSearch");
 
 /* Swal Toast */
 function toastMessage(message, bgColor = 'cornflowerblue') {
@@ -61,9 +62,9 @@ btnAdd.addEventListener("click", () => {
 });
 
 /* Mostrar tareas */
-function renderTasks() {
+function renderTasks(taskSet = tasks) {
     taskList.innerHTML = "";
-    for (const task of tasks) {
+    for (const task of taskSet) {
         const li = document.createElement("li");
         li.classList.add("list-group-item", "animate__animated", "animate__fadeIn", "animate__faster");
         li.innerHTML = `
@@ -157,4 +158,13 @@ taskList.addEventListener("change", (e) => {
         localStorage.setItem("tasks", JSON.stringify(tasks));
         renderTasks()
     }
-}); 
+});
+
+/* Buscar tarea */
+taskSearch.addEventListener("input", (e) => {
+    const searchedTask = e.target.value.trim().toLowerCase()
+    const filteredTasks = tasks.filter((task) => {
+        return task.text.toLowerCase().includes(searchedTask)
+    })
+    renderTasks(filteredTasks)
+}) 

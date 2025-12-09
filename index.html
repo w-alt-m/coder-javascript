@@ -10,10 +10,12 @@
       rel="stylesheet"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       rel="stylesheet"
@@ -43,6 +45,12 @@
           <h4 class="m-0">
             <i class="bi bi-calendar-check me-2 text-primary"></i>Tareas
           </h4>
+          <input
+            type="search"
+            class="form-control"
+            id="taskSearch"
+            placeholder="Buscar..."
+          />
           <button
             id="btnAdd"
             class="btn btn-primary add-btn-balance d-flex justify-content-center align-items-center rounded-pill px-3 py-2"
@@ -59,7 +67,10 @@
               class="form-control border-0 flex-grow-1 m-0"
               placeholder="Escribe una tarea..."
             />
-            <button type="submit" class="btn btn-custom-add d-flex align-items-center gap-1">
+            <button
+              type="submit"
+              class="btn btn-custom-add d-flex align-items-center gap-1"
+            >
               <i class="bi bi-plus"></i> Agregar
             </button>
           </form>

@@ -42,15 +42,19 @@
         <div
           class="card-header border-0 header-balance d-flex justify-content-between align-items-center"
         >
-          <h4 class="m-0">
-            <i class="bi bi-calendar-check me-2 text-primary"></i>Tareas
+          <h4 class="m-0"></i>Tareas
           </h4>
-          <input
-            type="search"
-            class="form-control"
-            id="taskSearch"
-            placeholder="Buscar..."
-          />
+          <div class="input-group mx-3 shadow-sm rounded-pill flex-nowrap" style="max-width: 300px;">
+            <span class="input-group-text bg-white border-0 ps-3 rounded-start-pill text-secondary">
+              <i class="bi bi-search"></i>
+            </span>
+            <input
+              type="search"
+              class="form-control border-0 rounded-end-pill shadow-none"
+              id="taskSearch"
+              placeholder="Buscar..."
+            />
+          </div>
           <button
             id="btnAdd"
             class="btn btn-primary add-btn-balance d-flex justify-content-center align-items-center rounded-pill px-3 py-2"

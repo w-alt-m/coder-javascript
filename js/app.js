@@ -63,6 +63,7 @@ btnAdd.addEventListener("click", () => {
 
 /* Mostrar tareas */
 function renderTasks(taskSet = tasks) {
+    formSection.classList.remove("show");
     taskList.innerHTML = "";
     for (const task of taskSet) {
         const li = document.createElement("li");
@@ -85,7 +86,6 @@ function renderTasks(taskSet = tasks) {
             `
         taskList.appendChild(li)
     }
-
 }
 renderTasks();
 
